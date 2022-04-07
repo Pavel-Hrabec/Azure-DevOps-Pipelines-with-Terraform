@@ -22,6 +22,11 @@ steps:
     TF_STATE_STORAGE_KEY:      $(euterraformstatefile-key-1)   
 - bash: terraform plan -out deployment.tfplan
   displayName: Terraform Plan 
+  env:
+    ARM_SUBSCRIPTION_ID: $(Azure-DevOps-Pipelines-with-Terraform-object-ID)
+    ARM_CLIENT_ID:       $(Azure-DevOps-Pipelines-with-Terraform-app-ID)
+    ARM_CLIENT_SECRET:   $(Azure-DevOps-Pipelines-with-Terraform-secret)
+    ARM_TENANT_ID:       $(Azure-DevOps-Pipelines-with-Terraform-tenant-ID)
 - bash: terraform apply -auto-approve deployment.tfplan
   displayName: Terraform Apply
   env:
