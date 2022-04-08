@@ -23,14 +23,14 @@ steps:
 - bash: terraform plan -out deployment.tfplan
   displayName: Terraform Plan 
   env:
-    ARM_SUBSCRIPTION_ID: $(Azure-DevOps-Pipelines-with-Terraform-object-ID)
-    ARM_CLIENT_ID:       $(Azure-DevOps-Pipelines-with-Terraform-app-ID)
-    ARM_CLIENT_SECRET:   $(Azure-DevOps-Pipelines-with-Terraform-secret)
-    ARM_TENANT_ID:       $(Azure-DevOps-Pipelines-with-Terraform-tenant-ID)
+    ARM_SUBSCRIPTION_ID: $(kv-arm-subscription-id)
+    ARM_CLIENT_ID:       $(kv-arm-client-id)
+    ARM_CLIENT_SECRET:   $(kv-arm-client-secret)
+    ARM_TENANT_ID:       $(kv-arm-tenant-id)
 - bash: terraform apply -auto-approve deployment.tfplan
   displayName: Terraform Apply
   env:
-    ARM_SUBSCRIPTION_ID: $(Azure-DevOps-Pipelines-with-Terraform-object-ID)
-    ARM_CLIENT_ID:       $(Azure-DevOps-Pipelines-with-Terraform-app-ID)
-    ARM_CLIENT_SECRET:   $(Azure-DevOps-Pipelines-with-Terraform-secret)
-    ARM_TENANT_ID:       $(Azure-DevOps-Pipelines-with-Terraform-tenant-ID)
+    ARM_SUBSCRIPTION_ID: $(kv-arm-subscription-id)
+    ARM_CLIENT_ID:       $(kv-arm-client-id)
+    ARM_CLIENT_SECRET:   $(kv-arm-client-secret)
+    ARM_TENANT_ID:       $(kv-arm-tenant-id)
