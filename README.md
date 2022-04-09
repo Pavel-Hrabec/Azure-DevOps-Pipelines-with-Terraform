@@ -7,7 +7,7 @@
 # Steps to achieve
 
 - Consider what permissions are required for Terraform and what scope
-    - If a user has `[Contributor`permissions](https://docs.microsoft.com/en-us/azure/key-vault/general/security-features#managing-administrative-access-to-key-vault) to a key vault management plane, the user can grant themselves access to the data plane by setting a Key Vault access policy
+    - If a user has [Contributor permissions](https://docs.microsoft.com/en-us/azure/key-vault/general/security-features#managing-administrative-access-to-key-vault) to a key vault management plane, the user can grant themselves access to the data plane by setting a Key Vault access policy
 - Create GitHub [repository](https://docs.github.com/en/get-started/quickstart/create-a-repo) and clone it locally
 - Create your [Terraform file](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) to provision Azure resources
 - Create service [principal account](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals)
